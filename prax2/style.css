@@ -1,0 +1,45 @@
+body {
+	background-color: #eee;
+    align-items: center;
+	text-align: center;
+	margin: 0 auto;
+    width: 60%;
+    font-size: 24px;
+}
+
+table,th,td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 4px solid darkslategray;
+    border-collapse: collapse;
+}
+
+.pickrounds td:hover {
+    background-color: lightgray;
+
+}
+
+
+.dieces tr:hover:nth-child(2)  td:hover:nth-child(3) {
+    background-color: lightgray;
+}
+
+.table td:hover:nth-child(1) {
+    background-color: lightgray;
+}
+
+span {
+    flex: 50%;
+    padding: 5px;
+}
+
+.game_area {
+    display: flex;
+    justify-content: center;
+}
+
+.pickrounds {
+    margin-left: 67%;
+}

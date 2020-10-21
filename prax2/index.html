@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Yatzy by markaa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <h1 id="header"></h1>
+
+  <div class="game_area">
+    <div class="pickrounds" id="pickrounds" >
+      <table>
+        <tbody id="rounds">
+          <tr>
+            <td onclick="game.ask_rounds(3);">3</td>
+          </tr>
+          <tr>
+            <td onclick="game.ask_rounds(7);">7</td>
+          </tr>
+          <tr>
+            <td onclick="game.ask_rounds(13);">13</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <span class="table">
+      <table>
+        <tbody id="board">
+          <tr>
+            <th>Type</th>
+            <th>Potential</th>
+            <th>Points</th>
+          </tr>
+        </tbody>
+      </table>
+    </span>
+
+    <span class="dieces">
+      <table>
+        <tbody id=dieces>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td onclick="game.roll_dice()">Roll</td>
+          </tr>
+        </tbody>
+      </table>
+    </span>
+  </div>
+
+</body>
+
+</html>
+
+<!--
+<button onclick="rollAll(dice)">Roll all</button>
+  <p id="diceValues"></p>
+  <table style="width:20%">
+    <tr>
+      <th>Type</th>
+      <th>Potential</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>Ones</td>
+      <td id="pOnes"></td>
+      <td id="Ones"></td>
+      <td><button onclick="scores['Ones'] = numbers(dice, 1); refresh(); this.style.display = 'none';">Add</button></td>
+    </tr>
+    <tr>
+      <td>Twos</td>
+      <td id="pTwos"></td>
+      <td id="Twos"></td>
+      <td><button onclick="scores['Twos'] = numbers(dice, 2); refresh(); this.style.display = 'none';">Add</button></td>
+    </tr>
+    <tr>
+      <td>Threes</td>
+      <td id="pThrees"></td>
+      <td id="Threes"></td>
+      <td><button onclick="scores['Threes'] = numbers(dice, 3); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Fours</td>
+      <td id="pFours"></td>
+      <td id="Fours"></td>
+      <td><button onclick="scores['Fours'] = numbers(dice, 4); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Fives</td>
+      <td id="pFives"></td>
+      <td id="Fives"></td>
+      <td><button onclick="scores['Fives'] = numbers(dice, 5); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Sixes</td>
+      <td id="pSixes"></td>
+      <td id="Sixes"></td>
+      <td><button onclick="scores['Sixes'] = numbers(dice, 6); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Three Of A Kind</td>
+      <td id="pThree Of A Kind"></td>
+      <td id="Three Of A Kind"></td>
+      <td><button
+          onclick="scores['Three Of A Kind'] = threeOfAKind(dice); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Four Of A Kind</td>
+      <td id="pFour Of A Kind"></td>
+      <td id="Four Of A Kind"></td>
+      <td><button
+          onclick="scores['Four Of A Kind'] = fourOfAKind(dice); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Small Straight</td>
+      <td id="pSmall Straight"></td>
+      <td id="Small Straight"></td>
+      <td><button
+          onclick="scores['Small Straight'] = smallStraight(dice); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Large Straight</td>
+      <td id="pLarge Straight"></td>
+      <td id="Large Straight"></td>
+      <td><button
+          onclick="scores['Large Straight'] = largeStraight(dice); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Full House</td>
+      <td id="pFull House"></td>
+      <td id="Full House"></td>
+      <td><button onclick="scores['Full House'] = fullHouse(dice); refresh(); this.style.display = 'none';">Add</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Chance</td>
+      <td id="pChance"></td>
+      <td id="Chance"></td>
+      <td><button onclick="scores['Chance'] = chance(dice); refresh(); this.style.display = 'none';">Add</button></td>
+    </tr>
+    <tr>
+      <td>Yahtzee</td>
+      <td id="pYahtzee"></td>
+      <td id="Yahtzee"></td>
+      <td><button onclick="scores['Yahtzee'] = yahtzee(dice); refresh(); this.style.display = 'none';">Add</button></td>
+    </tr>
+  </table>
+-->
