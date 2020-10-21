@@ -24,30 +24,39 @@ class Yahtzee {
 
         this.header.innerHTML = "How many rounds?";
         this.rounds = 0;
-        this.board = document.getElementById("board")
-        this.board.style.visibility = "hidden";
+        this.board = document.getElementById("boardbody")
         this.pickdice = document.getElementById("dieces")
+
+        /*
+        this.board.style.visibility = "hidden";
         this.pickdice.style.visibility = "hidden"
+        */
         this.dice = []
+    }
+
+    createRow(column0, column1, column2) {
+        var tr = document.createElement("tr");
+        var choice = document.createElement("td");
+        var potential = document.createElement("td");
+        var points = document.createElement("td");
+        choice.innerHTML = column0;
+        potential.innerHTML = column1;
+        points.innerHTML = column2;
+        tr.appendChild(choice);
+        tr.appendChild(potential);
+        tr.appendChild(points);
+        return tr;
     }
 
     createTable() {
         let n = 0;
+        this.createRow("Type", "Potential", "Points");
         for (var key in this.table) {
             if (n == this.rounds) break; n++;
-            var tr = document.createElement("tr");
-            var choice = document.createElement("td");
-            var potential = document.createElement("td");
-            var points = document.createElement("td");
-            choice.innerHTML = key;
-            potential.innerHTML = 0;
-            points.innerHTML = 0;
-            tr.appendChild(choice);
-            tr.appendChild(potential);
-            tr.appendChild(points);
-            document.getElementById("board").appendChild(tr);
+            row = this.createRow(key, 0, 0);
+            this.board.appendChild(row);
         }
-        this.board.style.visibility = "visible"
+        this.board.removeAttribute("hidden");
     }
 
     ask_rounds(n) {
@@ -55,7 +64,7 @@ class Yahtzee {
         document.getElementById("pickrounds").remove();
         this.header.innerHTML = "Let's play!";
         this.createTable()
-        this.pickdice.style.visibility = "visible"
+        this.pickdice.removeAttribute("hidden");
     }
 
     roll_dice() {

@@ -7,32 +7,37 @@ body {
     font-size: 24px;
 }
 
-table,th,td {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: 4px solid darkslategray;
+table tbody, table thead {
+    display: block;
+}
+
+table {
     border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    overflow: hidden;
+    padding: 5px;
+    column-width: 40px;
+    border: 1px solid;
 }
 
 .pickrounds td:hover {
     background-color: lightgray;
-
 }
-
 
 .dieces tr:hover:nth-child(2)  td:hover:nth-child(3) {
     background-color: lightgray;
 }
 
-.table td:hover:nth-child(1) {
+.table tr:hover:nth-child(1n+2) {
     background-color: lightgray;
 }
 
 span {
-    flex: 50%;
-    padding: 5px;
+    flex: 40%;
+    padding: 10px;
 }
 
 .game_area {
@@ -40,6 +45,7 @@ span {
     justify-content: center;
 }
 
-.pickrounds {
-    margin-left: 67%;
+.dieces td {
+    width: 40px;
+    height: 40px;
 }
