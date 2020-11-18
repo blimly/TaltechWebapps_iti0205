@@ -1,5 +1,5 @@
 body {
-	background-color: #eee;
+	background-color: #fefefe;
     align-items: center;
 	text-align: center;
 	margin: 0 auto;
@@ -7,8 +7,10 @@ body {
     font-size: 24px;
 }
 
-table tbody, table thead {
-    display: block;
+.game_area {
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
 }
 
 table {
@@ -18,8 +20,7 @@ table {
 
 th, td {
     overflow: hidden;
-    padding: 5px;
-    column-width: 40px;
+    padding: 10px;
     border: 1px solid;
 }
 
@@ -27,25 +28,44 @@ th, td {
     background-color: lightgray;
 }
 
+.table tr:nth-child(1){
+    font-weight: bold;
+
+}
+
+.table tr:hover:nth-child(1n+2){
+    background-color: lightgray;
+}
+
+
+span {
+    flex: 20%;
+    padding: 5px;
+}
+
+
 .dieces tr:hover:nth-child(2)  td:hover:nth-child(3) {
     background-color: lightgray;
 }
 
-.table tr:hover:nth-child(1n+2) {
-    background-color: lightgray;
-}
-
-span {
-    flex: 40%;
-    padding: 10px;
-}
-
-.game_area {
-    display: flex;
-    justify-content: center;
-}
-
 .dieces td {
+    display: block;
     width: 40px;
     height: 40px;
+    padding: 20px;
+}
+
+.pickrounds td {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+}
+
+img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    width: 32px;
+    height: 32px;
 }
