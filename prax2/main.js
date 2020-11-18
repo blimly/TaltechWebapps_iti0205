@@ -1,37 +1,47 @@
-// yatze by markaa
+// yatzee by markaa
 var game;
 
 class Yahtzee {
     constructor() {
+        this.board = document.getElementById("boardbody");
+        this.pickdice = document.getElementById("dieces");
         this.header = document.getElementById("header");
-        this.header.innerHTML = "Loading Game";
+        this.tableelem = document.getElementById("table");
+        this.header.innerHTML = "How many rounds?";
+
+        this.rounds = 0;
+        this.rounds_left = 0;
+        this.play_score = 0;
+
+        this.canchoose = false;
+        this.rolls_this_round = 0;
+        this.dice = [];
+        this.dice_imgs = [];
+        this.load_dice_imgs();
 
         this.table = {
-            "Ones": [0, 0],
-            "Twos": [0, 0],
-            "Threes": [0, 0],
-            "Fours": [0, 0],
-            "Fives": [0, 0],
-            "Sixes": [0, 0],
-            "Three of a Kind": [0, 0],
-            "Four of a Kind": [0, 0],
-            "Small Straight": [0, 0],
-            "Large Straight": [0, 0],
-            "Full House": [0, 0],
-            "Chance": [0, 0],
-            "Yahtzee": [0, 0]
+            "Ones": [0, 0, false],
+            "Twos": [0, 0, false],
+            "Threes": [0, 0, false],
+            "Fours": [0, 0, false],
+            "Fives": [0, 0, false],
+            "Sixes": [0, 0, false],
+            "Three of a Kind": [0, 0, false],
+            "Four of a Kind": [0, 0, false],
+            "Small Straight": [0, 0, false],
+            "Large Straight": [0, 0, false],
+            "Full House": [0, 0, false],
+            "Chance": [0, 0, false],
+            "Yahtzee": [0, 0, false]
         };
+    }
 
-        this.header.innerHTML = "How many rounds?";
-        this.rounds = 0;
-        this.board = document.getElementById("boardbody")
-        this.pickdice = document.getElementById("dieces")
-
-        /*
-        this.board.style.visibility = "hidden";
-        this.pickdice.style.visibility = "hidden"
-        */
-        this.dice = []
+    load_dice_imgs() {
+        for (let i = 1; i <= 6; i++) {
+            let img = document.createElement("img");
+            img.src = "img/dice" + i + ".png";
+            this.dice_imgs.push(img);
+        }
     }
 
     createRow(column0, column1, column2) {
@@ -50,88 +60,124 @@ class Yahtzee {
 
     createTable() {
         let n = 0;
-        this.createRow("Type", "Potential", "Points");
+        this.board.appendChild(this.createRow("Type", "Potential", "Points"));
         for (var key in this.table) {
             if (n == this.rounds) break; n++;
-            row = this.createRow(key, 0, 0);
+            let row = this.createRow(key, 0, 0);
+            row.setAttribute("onclick", "game.choose(this)");
             this.board.appendChild(row);
         }
-        this.board.removeAttribute("hidden");
+        this.tableelem.removeAttribute("hidden");
     }
 
     ask_rounds(n) {
         this.rounds = n;
+        this.rounds_left = n;
         document.getElementById("pickrounds").remove();
-        this.header.innerHTML = "Let's play!";
+        this.header.innerHTML = "Roll";
         this.createTable()
         this.pickdice.removeAttribute("hidden");
     }
 
     roll_dice() {
-        let roll = document.getElementById("dieces").getElementsByTagName("td")
-        this.dice = []
-        for (let i = 0; i < 5; i++) {
-            let rand = Math.ceil(Math.random() * 6);
-            this.dice.push(rand);
-            roll[i].innerHTML = rand;
+        if (this.rolls_this_round < 3 && this.rounds_left > 0) {
+            let roll = this.pickdice.getElementsByTagName("td")
+            for (let i = 0; i < 5; i++) {
+                let rand = Math.ceil(Math.random() * 6);
+                this.dice[i] = rand;
+                roll[i].innerHTML = null;
+                roll[i].appendChild(this.dice_imgs[rand - 1].cloneNode(true));
+            }
+            this.rolls_this_round += 1;
+            this.canchoose = true;
+            this.updateTable();
         }
-        this.updateTable();
     }
 
     updateTable() {
-        let board = document.getElementById("board").getElementsByTagName("td");
-
+        let board = this.board.getElementsByTagName("td");
         let n = 0;
         for (var key in this.table) {
-            if (n == this.rounds) break; 
-            this.table[key][0] = this.calculatePotential(key);
-            board[1 + n*3].innerHTML = this.table[key][0]
-            board[2 + n*3].innerHTML = this.table[key][1];
-            n++;
+            if (n == this.rounds) break; n++;
+            if (this.table[key][2] === false) {
+                this.table[key][0] = this.calculatePotential(key);
+            }
+            board[1 + n * 3].innerHTML = this.table[key][0]
+            board[2 + n * 3].innerHTML = this.table[key][1];
         }
+        this.updateHeader();
+    }
+
+    choose(row) {
+        row.style["background-color"] = "lightgray";
+        row = row.getElementsByTagName("td");
+        let rep = this.table[row[0].innerHTML];
+        if (this.canchoose == true && rep[2] == false) {
+            this.canchoose = false;
+            rep[2] = true;
+            rep[1] = rep[0];
+            this.play_score += rep[1];
+            this.rolls_this_round = 0;
+            this.rounds_left--;
+
+            this.updateTable();
+            this.updateHeader();
+        }
+    }
+
+    updateHeader() {
+        let action = "";
+        if (this.canchoose) {
+            if (this.rolls_this_round < 3) {
+                action = "choose or roll";
+            } else {
+                action = "choose";
+            }
+        } else {
+            if (this.rolls_this_round < 3 && this.rounds_left > 0) {
+                action = "roll";
+            } else {
+                action = "Game over";
+            }
+        }
+        this.header.innerHTML = "Rounds left: " + this.rounds_left +
+            " . Score: " + this.play_score + ". " + action;
     }
 
     calculatePotential(key) {
         switch (key) {
             case "Ones":
-                return this.dice.filter(x => x == 1).length;
+                return numbers(this.dice, 1);
             case "Twos":
-                return this.dice.filter(x => x == 2).length;
+                return numbers(this.dice, 2);
             case "Threes":
-                return this.dice.filter(x => x == 3).length;
+                return numbers(this.dice, 3);
             case "Fours":
-                return this.dice.filter(x => x == 4).length;
+                return numbers(this.dice, 4);
             case "Fives":
-                return this.dice.filter(x => x == 5).length;
+                return numbers(this.dice, 5);
             case "Sixes":
-                return this.dice.filter(x => x == 6).length;
+                return numbers(this.dice, 6);
             case "Three of a Kind":
-                break;
+                return threeOfAKind(this.dice);
             case "Four of a Kind":
-                break;
+                return fourOfAKind(this.dice);
             case "Small Straight":
-                break;
+                return smallStraight(this.dice);
             case "Large Straight":
-                break;
+                return largeStraight(this.dice);
             case "Full House":
-                break;
+                return fullHouse(this.dice);
             case "Chance":
-                break;
+                return chance(this.dice);
             case "Yahtzee":
-                break;
+                return yahtzee(this.dice);
         }
     }
-
 }
 
 window.onload = function () {
     game = new Yahtzee();
-}
-
-
-
-function roll() {
-    return Math.ceil(Math.random() * 6);
 }
 
 function numbers(dice, n) {
@@ -178,13 +224,9 @@ function smallStraight(dice) {
     if (!dice.includes(3) || !dice.includes(4)) {
         return 0;
     }
-    if (dice.includes(5) && dice.includes(6)) {
-        return 30;
-    }
-    if (dice.includes(1) && dice.includes(2)) {
-        return 30;
-    }
-    if (dice.includes(2) && dice.includes(5)) {
+    if (dice.includes(5) && dice.includes(6) || 
+        dice.includes(1) && dice.includes(2) ||
+        dice.includes(2) && dice.includes(5)) {
         return 30;
     }
     return 0;
@@ -243,34 +285,4 @@ function yahtzee(dice) {
         }
     }
     return 50;
-}
-
-function rollAll(dice) {
-    for (let i = 0; i < dice.length; i++) {
-        dice[i] = roll();
-    }
-    refresh();
-    return dice;
-}
-
-function refresh() {
-    for (let key in scores) {
-        document.getElementById(key).innerHTML = scores[key];
-    }
-
-    document.getElementById("diceValues").innerHTML = "dice: " + dice.toString();
-
-    document.getElementById("pOnes").innerHTML = numbers(dice, 1).toString();
-    document.getElementById("pTwos").innerHTML = numbers(dice, 2).toString();
-    document.getElementById("pThrees").innerHTML = numbers(dice, 3).toString();
-    document.getElementById("pFours").innerHTML = numbers(dice, 4).toString();
-    document.getElementById("pFives").innerHTML = numbers(dice, 5).toString();
-    document.getElementById("pSixes").innerHTML = numbers(dice, 6).toString();
-    document.getElementById("pThree Of A Kind").innerHTML = threeOfAKind(dice).toString();
-    document.getElementById("pFour Of A Kind").innerHTML = fourOfAKind(dice).toString();
-    document.getElementById("pSmall Straight").innerHTML = smallStraight(dice).toString();
-    document.getElementById("pLarge Straight").innerHTML = largeStraight(dice).toString();
-    document.getElementById("pFull House").innerHTML = fullHouse(dice).toString();
-    document.getElementById("pChance").innerHTML = chance(dice).toString();
-    document.getElementById("pYahtzee").innerHTML = yahtzee(dice).toString();
 }

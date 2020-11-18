@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.header-menu {
+    background-color: #505050;
+    height: 40px;
+    border-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.logo {
+    width: 125px;
+}
+
+.logo img {
+    width: 150px;
+    height: 40px;
+}
+
+.search_box {
+    background-color: #505050;
+    position: absolute;
+    top: 8px;
+    margin-left: 180px;
+}
+
+#search input[type="text"] {
+    background-color: #404040;
+    outline: none;
+    border: 0 none;
+    font: bold 12px Arial;
+    width: 350px;
+    padding: 6px 15px 6px 15px;
+}
+
+#search input[type="text"]:focus {
+    background-color: #606060;
+    width: 350px;
+}
+
+@media screen and (max-width: 1280px) {
+    #menu {
+        background-color: #404040;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 20px;
+        padding-top: 10px;
+        margin-left: 4%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #menu {
+        background-color: #404040;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 20px;
+        padding-top: 10px;
+        margin-left: 6%;
+    }
+}
+
+#menu a {
+    color: #eeeeee;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #404040;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#menu a:hover {
+    background-color: #606060;
+}
