@@ -2,7 +2,10 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial;
-    font-size: 12px;
+}
+
+body {
+    background-color: #eee;
 }
 
 .header-menu {
@@ -45,6 +48,7 @@
     font: bold 12px Arial;
     width: 350px;
     padding: 6px 15px 6px 15px;
+    margin: 0;
 }
 
 #search input[type="text"]:focus {
@@ -58,7 +62,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: 20px;
+        height: 30px;
         padding-top: 10px;
         margin-left: 4%;
     }
@@ -70,7 +74,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: 20px;
+        height: 30px;
         padding-top: 10px;
         margin-left: 6%;
     }
@@ -89,4 +93,45 @@
 
 #menu a:hover {
     background-color: #606060;
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 20px;
+    padding: 8px;
+    color: #202020
+}
+
+input[type="text"] {
+    background-color: #d0d0d0;
+    border: 2px solid #c0c0c0;
+    font-size: 15px;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    outline: none;
+}
+
+input[type="text"]:hover {
+    background-color: #d0d0d0;
+    border: 2px solid #606060;
+    font-size: 15px;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #00c3e3;
+    border: 2px solid #404040;
+    font-size: 15px;
+    color: #505050;
+    padding: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 3px;
+
 }
