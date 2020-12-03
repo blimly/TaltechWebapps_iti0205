@@ -1,4 +1,6 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^.*$ /~markaa/prax3/index.php [L,QSA]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^.*$ /~markaa/prax3/index.php [L,QSA]
+RewriteRule  ^([A-Za-z0-9_-]+)$ profile.php?u=$1
+RewriteRule  ^([A-Za-z0-9_-]+)/$ profile.php?u=$1

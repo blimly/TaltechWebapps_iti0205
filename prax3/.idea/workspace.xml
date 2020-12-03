@@ -20,11 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dddc1c6-e0f9-4351-b742-971b357a1c9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/friend_requests.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/prevent_attacks.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/connect.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/connect.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/footer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/footer.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/header.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +63,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/appache_start.php" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="PHP Script.apache_start">
@@ -87,7 +102,14 @@
       <workItem from="1606073506598" duration="28000" />
       <workItem from="1606235899458" duration="1672000" />
       <workItem from="1606240698982" duration="4566000" />
-      <workItem from="1606251532475" duration="655000" />
+      <workItem from="1606251532475" duration="1863000" />
+      <workItem from="1606590730767" duration="22000" />
+      <workItem from="1606652547548" duration="2165000" />
+      <workItem from="1606655656707" duration="117000" />
+      <workItem from="1606655807114" duration="8773000" />
+      <workItem from="1606673855959" duration="36667000" />
+      <workItem from="1606829925659" duration="21557000" />
+      <workItem from="1606901959257" duration="39083000" />
     </task>
     <servers />
   </component>
@@ -115,14 +137,18 @@
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
     <state x="665" y="513" width="642" height="697" key="#PHP/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606236029214" />
+    <state x="228" y="766" width="1454" height="307" key="#SQL_Dialects" timestamp="1606660399773">
+      <screen x="0" y="420" width="1920" height="1080" />
+    </state>
+    <state x="228" y="766" width="1454" height="307" key="#SQL_Dialects/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606660399773" />
     <state x="566" y="494" width="828" height="674" key="#Servers" timestamp="1606236695134">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
     <state x="566" y="494" width="828" height="674" key="#Servers/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606236695134" />
-    <state x="537" y="442" width="889" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606237455544">
+    <state x="525" y="486" width="889" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606660794944">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state x="537" y="442" width="889" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606237455544" />
+    <state x="525" y="486" width="889" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606660794944" />
     <state x="752" y="660" width="456" height="319" key="#com.intellij.tools.ToolEditorDialog" timestamp="1606236594086">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
@@ -131,33 +157,55 @@
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
     <state x="762" y="582" width="428" height="474" key="FileChooserDialogImpl/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606237445432" />
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom" timestamp="1606237572633">
+    <state width="1291" height="292" key="GridCell.Tab.0.bottom" timestamp="1606673573771">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.bottom/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606237572633" />
-    <state width="1874" height="292" key="GridCell.Tab.0.center" timestamp="1606237572633">
+    <state width="1291" height="292" key="GridCell.Tab.0.bottom/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606673573771" />
+    <state width="1291" height="292" key="GridCell.Tab.0.center" timestamp="1606673573771">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.center/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606237572633" />
-    <state width="1874" height="292" key="GridCell.Tab.0.left" timestamp="1606237572632">
+    <state width="1291" height="292" key="GridCell.Tab.0.center/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606673573771" />
+    <state width="1291" height="292" key="GridCell.Tab.0.left" timestamp="1606673573770">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.left/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606237572632" />
-    <state width="1874" height="292" key="GridCell.Tab.0.right" timestamp="1606237572633">
+    <state width="1291" height="292" key="GridCell.Tab.0.left/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606673573770" />
+    <state width="1291" height="292" key="GridCell.Tab.0.right" timestamp="1606673573771">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state width="1874" height="292" key="GridCell.Tab.0.right/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606237572633" />
-    <state x="499" y="560" key="SettingsEditor" timestamp="1606236325044">
+    <state width="1291" height="292" key="GridCell.Tab.0.right/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606673573771" />
+    <state width="240" height="454" key="HiddenNamespacesPopup" timestamp="1606927064434">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state x="499" y="560" key="SettingsEditor/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606236325044" />
+    <state width="240" height="454" key="HiddenNamespacesPopup/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606927064434" />
+    <state x="487" y="452" key="SettingsEditor" timestamp="1606950530407">
+      <screen x="0" y="420" width="1920" height="1080" />
+    </state>
+    <state x="487" y="452" key="SettingsEditor/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606950530407" />
+    <state x="479" y="533" key="SettingsEditor/0.420.1920.1080/1920.0.1080.1920@1920.0.1080.1920" timestamp="1606830022803" />
+    <state x="603" y="459" width="680" height="705" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606958107940">
+      <screen x="0" y="420" width="1920" height="1080" />
+    </state>
+    <state x="603" y="459" width="680" height="705" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606958107940" />
     <state x="881" y="622" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1606236595125">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
     <state x="881" y="622" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606236595124" />
-    <state x="681" y="822" width="544" height="166" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606241022093">
+    <state x="656" y="699" width="608" height="488" key="find.popup" timestamp="1606733289470">
       <screen x="0" y="420" width="1920" height="1080" />
     </state>
-    <state x="681" y="822" width="544" height="166" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606241022093" />
+    <state x="656" y="699" width="608" height="488" key="find.popup/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606733289470" />
+    <state x="622" y="451" key="run.anything.popup" timestamp="1606952726095">
+      <screen x="0" y="420" width="1920" height="1080" />
+    </state>
+    <state x="622" y="451" key="run.anything.popup/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606952726095" />
+    <state x="623" y="643" width="672" height="678" key="search.everywhere.popup" timestamp="1606945576026">
+      <screen x="0" y="420" width="1920" height="1080" />
+    </state>
+    <state x="623" y="643" width="672" height="678" key="search.everywhere.popup/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606945576026" />
+    <state x="815" y="632" width="461" height="296" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606829951447">
+      <screen x="0" y="420" width="1920" height="1080" />
+    </state>
+    <state x="669" y="714" width="544" height="166" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.420.1920.1080/1920.0.1080.1920@0.420.1920.1080" timestamp="1606655659906" />
+    <state x="815" y="632" width="461" height="296" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.420.1920.1080/1920.0.1080.1920@1920.0.1080.1920" timestamp="1606829951447" />
   </component>
 </project>
