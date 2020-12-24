@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Yatzy by markaa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.0/socket.io.js"></script>
+  <script src="index.js"></script>
+
+</head>
+
+<body>
+  <h1 id="header"></h1>
+
+  <div class="pregame">
+    <div class="ask_name">
+      <form action="game.ask_name()" method="POST">
+        <input type="text" placeholder="Name?"/>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="game_area">
+    <div class="waiting" hidden="true"></div>
+
+
+    <div class="pickrounds" id="pickrounds" hidden="true">
+      <table>
+        <tbody id="rounds">
+          <tr>
+            <td onclick="game.ask_rounds(3);">3</td>
+          </tr>
+          <tr>
+            <td onclick="game.ask_rounds(7);">7</td>
+          </tr>
+          <tr>
+            <td onclick="game.ask_rounds(13);">13</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <span class="waiting" hidden='true'>
+      <h2>Waiting for other player to join.</h2>
+    </span>
+
+    <span class="table" id="table1" hidden="true">
+      <h2>Player 1</h2>
+      <table>
+        <tbody id="boardbody"></tbody>
+      </table>
+      <h2>Points: </h2>
+      <h2 id=p1points>0</h2>
+    </span>
+
+    <span class="dieces" id="dieces" hidden="true">
+      <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td onclick="game.roll_dice()"><img src="img/roll.png" alt="roll"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </span>
+
+    <span class="table" id="table2" hidden="true">
+      <h2>Player 2</h2>
+      <table>
+        <tbody id="boardbody2"></tbody>
+      </table>
+      <h2>Points: </h2>
+      <h2 id=p2points>0</h2>
+
+    </span>
+  </div>
+
+</body>
+
+</html>
