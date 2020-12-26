@@ -10,10 +10,11 @@ const gameState = {
 
     }
 }
+/*
 const socket = io("http://localhost:3000/");
 socket.on('init', handleInit);
 socket.on('gamestate', handleGamestate);
-
+*/
 
 function handleInit(msg) {
     console.log(msg);

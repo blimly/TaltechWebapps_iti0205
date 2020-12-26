@@ -119,14 +119,31 @@ h1, h2, p, td {
     }
 }
 
-input[type='text'] {
+input[type='text'],input[type='submit'] {
     background-color: #ccc;
     outline: none;
     border: 0 none;
-    font: light 24px Arial;
+    font: 24px Arial;
     width: 200px;
     height: 50px;
-    padding-left: 10px;
+    border-radius: 4px;
+    color: #333;
+    padding: 0 10px;
+}
+
+input[type='submit'] {
+    padding: 0 10px
+}
+
+
+input[type='submit']:hover {
+    background-color: #999;
+    outline: none;
+    border: 0 none;
+    font: 24px Arial;
+    width: 202px;
+    height: 50px;
+    padding: 10px;
     margin: 0;
     border-radius: 4px;
 }

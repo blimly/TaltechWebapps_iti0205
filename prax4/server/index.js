@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http, {
     cors: {
@@ -7,7 +8,6 @@ var io = require('socket.io')(http, {
     }
 });
 const port = 3000;
-var app = express();
 
 io.on('connection', client => {
     client.emit('init', {data: 'hello world'})

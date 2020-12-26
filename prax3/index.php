@@ -23,7 +23,7 @@ $pswd2 = strip_tags(@$_POST['password2']);
 $d = date("Y-m-d");
 
 if ($reg) {
-    $u_check = $mysqli->query("SELECT username FROM users WHERE username='$un'"); // check if user already exists
+    $u_check = $mysqli->query("SELECT username FROM users WHERE username='$un' OR user_mail='$em'"); // check if user already exists
     $check = mysqli_num_rows($u_check);
     if ($check == 0) {
         // check that all the fields are filled
