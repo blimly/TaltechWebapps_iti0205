@@ -1,0 +1,2 @@
+# Taltech Webapplications course projects 🐣
+
